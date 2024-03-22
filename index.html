@@ -1,1 +1,71 @@
-<h1>This is a test</h1>
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Adam Chisolm Is</title>
+		<style>
+		:root {
+			--step--2: clamp(0.78rem, calc(0.71rem + 0.35vw), 1.20rem);
+			--step--1: clamp(0.94rem, calc(0.84rem + 0.47vw), 1.50rem);
+			--step-0: clamp(1.13rem, calc(1.00rem + 0.63vw), 1.88rem);
+			--step-1: clamp(1.35rem, calc(1.18rem + 0.83vw), 2.34rem);
+			--step-2: clamp(1.62rem, calc(1.40rem + 1.09vw), 2.93rem);
+			--step-3: clamp(1.94rem, calc(1.66rem + 1.43vw), 3.66rem);
+			--step-4: clamp(2.33rem, calc(1.96rem + 1.87vw), 4.58rem);
+			--step-5: clamp(2.80rem, calc(2.31rem + 2.44vw), 5.72rem);
+			--foreground: #ccc;
+			--background: #222;
+			--accent: #fff;
+		}
+		
+		@media (prefers-color-scheme: light) {
+			:root {
+				--foreground: #555;
+				--background: #eee;
+				--accent: #000;
+			}
+		}
+		
+		body {
+			background: var(--background);
+			color: var(--foreground);
+			font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+			font-size: var(--step-0);
+			margin: 0 1em;
+			overflow-wrap: break-word;
+		}
+		
+		main {
+			margin: 5em 2em 2em 2em;
+		}
+		
+		.status {
+			color: var(--accent);
+		}
+		
+		a:link, a:visited, a:hover, a:active {
+			color: var(--foreground);
+		}
+		
+		</style>
+	</head>
+	
+	<body>
+		
+		<h1 id="logline">
+			Adam Chisolm is
+			
+		</h1>
+		
+	</body>
+	
+	<script>
+		let statuses = ["working on something new", "keeping something sneaky", "not sure if this is a good idea"];
+		console.log(statuses);
+		let choice = statuses[Math.floor(Math.random() * 100) % 3];
+		
+		console.log(choice);
+		document.getElementById("logline").innerHTML = "Adam is \<span class\=\"status\">" + choice + "\<\/span\>";
+	</script>
+</html>
